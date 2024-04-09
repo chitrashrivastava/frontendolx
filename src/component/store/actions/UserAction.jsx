@@ -135,10 +135,15 @@ export const asyncremoveUser= () => async (dispatch, getState) => {
 
 
 export const asyncUploadItem=(data)=>async(dispatch,getState)=>{
+
     try{
-        const response=await axios.post('/upload-item',data)
+        console.log(data)
+        const response=await axios.post('/uploadproduct',data)
+        console.log(response)
     }
     catch(err){
         console.log(err)
     }
 }
+
+

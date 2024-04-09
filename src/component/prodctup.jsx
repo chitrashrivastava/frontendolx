@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { asyncUpdateUser } from '../component/store/actions/UserAction'; // Import your user actions
+import { asyncUpdateUser,asyncUploadItem } from '../component/store/actions/UserAction'; // Import your user actions
 
 const Productup = () => {
   const dispatch = useDispatch();
@@ -11,6 +11,7 @@ const Productup = () => {
     price: '',
     description: '',
     image: null, // Initialize image as null
+    category: '' // Initialize category
   });
 
   // Function to handle form input changes
@@ -31,8 +32,10 @@ const Productup = () => {
     formDataToUpdate.append('price', formData.price);
     formDataToUpdate.append('description', formData.description);
     formDataToUpdate.append('image', formData.image);
+    formDataToUpdate.append('category', formData.category); // Append category
     
-    dispatch(asyncUpdateUser(formDataToUpdate))
+    
+    dispatch( asyncUploadItem(formDataToUpdate))
       .then((response) => {
         // Handle success if needed
         console.log('Product updated successfully:', response);
@@ -69,6 +72,19 @@ const Productup = () => {
         <div>
           <label htmlFor="image" className="block text-gray-700">Image:</label>
           <input type="file" id="image" name="image" onChange={handleChange} className="w-full border rounded-md px-3 py-2 focus:outline-none focus:border-blue-500" />
+        </div>
+
+        {/* Select input for category */}
+        <div>
+          <label htmlFor="category" className="block text-gray-700">Category:</label>
+          <select id="category" name="category" value={formData.category} onChange={handleChange} className="w-full border rounded-md px-3 py-2 focus:outline-none focus:border-blue-500">
+            <option value="">Select Category</option>
+            <option value="cars">Cars</option>
+            <option value="motorcycle">Motorcycle</option>
+            <option value="mobilephone">Mobile Phone</option>
+            <option value="house">House</option>
+            <option value="scooters">Scooters</option>
+          </select>
         </div>
 
         {/* Submit button */}

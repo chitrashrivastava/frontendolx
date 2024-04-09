@@ -2,7 +2,7 @@ import axios from "axios";
 
 const instance = axios.create({
     baseURL:
-         "https://backendolx.vercel.app/",
+         "http://localhost:3003",
     withCredentials: true,
 });
 
