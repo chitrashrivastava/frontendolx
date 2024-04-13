@@ -9,6 +9,10 @@ import Register from './component/register';
 import Profile from './component/profile';
 import UpdateProfile from './component/Update';
 import Productup from './component/prodctup'; // Sahi path ke saath import statement
+import Cars from './component/Cars';
+import Motorcycle from './component/Motorcycle';
+
+
 
 function App() {
   
@@ -22,6 +26,8 @@ function App() {
       <Route path='/register' element={<Register/>}/>
       <Route path='/profile' element={<Profile/>}/>
       <Route path='/update' element={<UpdateProfile/>}/>
+      <Route path='/cars' element={<Cars/>}/>
+      <Route path='/motorcycle' element={<Motorcycle/>}/>
     </Routes>
     </>
   );

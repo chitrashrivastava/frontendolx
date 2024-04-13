@@ -1,4 +1,4 @@
-import { removeUser, saveUser } from "../reducers/userSlice";
+import { removeUser, saveProduct, saveUser } from "../reducers/userSlice";
 import axios from "../../config/axios";
 import { useNavigate } from "react-router-dom";
 import {toast} from 'react-toastify'
@@ -146,4 +146,14 @@ export const asyncUploadItem=(data)=>async(dispatch,getState)=>{
     }
 }
 
+export const asyncfetchProduct=(category)=> async(dispatch,getState)=>{
+   try {
+    const chal = await axios.get(`/fetchproduct/${category}`)
+    console.log(chal)
+    console.log(category)
+    dispatch(saveProduct(chal.data.placement))
+   } catch (error) {
+    console.log(error)
+   } 
+}
 
