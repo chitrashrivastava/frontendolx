@@ -4,12 +4,12 @@ import { asyncfetchProduct } from './store/actions/UserAction'
 
 
 
-const Motorcycle = () => {
+const Scooters = () => {
   const { Product } = useSelector((state) => state.user);
     const dispatch = useDispatch()
  
     useEffect(()=>{
-        dispatch( asyncfetchProduct("motorcycle")) 
+        dispatch( asyncfetchProduct("scooters")) 
  
      },[dispatch])
 
@@ -43,4 +43,4 @@ const Motorcycle = () => {
   )
 }
 
-export default Motorcycle
+export default Scooters

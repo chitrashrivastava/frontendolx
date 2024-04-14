@@ -11,6 +11,7 @@ import UpdateProfile from './component/Update';
 import Productup from './component/prodctup'; // Sahi path ke saath import statement
 import Cars from './component/Cars';
 import Motorcycle from './component/Motorcycle';
+import Scooters from './component/Scooters';
 
 
 
@@ -28,6 +29,8 @@ function App() {
       <Route path='/update' element={<UpdateProfile/>}/>
       <Route path='/cars' element={<Cars/>}/>
       <Route path='/motorcycle' element={<Motorcycle/>}/>
+      <Route path='/scooters' element={<Scooters/>}/>
+
     </Routes>
     </>
   );
