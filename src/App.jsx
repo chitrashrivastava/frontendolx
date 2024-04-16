@@ -14,6 +14,10 @@ import Motorcycle from './component/Motorcycle';
 import Scooters from './component/Scooters';
 import Mobile from './component/Mobile';
 import House from './component/House';
+import Notfound from './component/Notfound';
+import Showcart from './component/Showcart';
+
+
 function App() {
   
   return (
@@ -31,7 +35,9 @@ function App() {
       <Route path='/scooters' element={<Scooters/>}/>
       <Route path='/mobile' element={<Mobile/>}/>
       <Route path='/houses' element={<House/>}/>
+      <Route path='/showcart' element={<Showcart/>}/>
 
+       <Route path='*' element={<Notfound/>} /> 
 
       
     

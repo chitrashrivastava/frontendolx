@@ -1,10 +1,14 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { asyncfetchProduct } from './store/actions/UserAction';
+import { addToCart, asyncfetchProduct } from './store/actions/UserAction';
 
 const Cars = () => {
   const { Product } = useSelector((state) => state.user);
+  console.log(Product)
   const dispatch = useDispatch();
+
+  const {user} = useSelector((state) => state.user)
+  console.log(user)
 
   useEffect(() => {
     dispatch(asyncfetchProduct("cars"));
@@ -15,8 +19,11 @@ const Cars = () => {
     return <div>Loading...</div>; // Or any other loading indicator
   }
    // Define cardfunc to add the selected product to the cart
-   const cardfunc = (product) => {
-    dispatch(addToCart(product)); // Dispatch action to add product to cart
+  //  
+   const cardfunc = (productid) => {
+    dispatch(addToCart({productid,user:user._id})); // Dispatch action to add product to cart
+
+
   }
   return (
     <div className="container mx-auto mt-8">
@@ -30,7 +37,7 @@ const Cars = () => {
               <p className="text-gray-700">{data.description}</p>
             </div>
             <div className="p-4 bg-gray-100">
-            <button onClick={() => cardfunc(data)} className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline">
+            <button onClick={() => cardfunc(data._id)} className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline">
                 Add to Cart
               </button>
             </div>

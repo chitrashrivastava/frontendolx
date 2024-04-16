@@ -61,6 +61,8 @@ const Nav1 = () => {
                 <Link to="/mobile" className="text-blue-600 hover:underline mb-2">Mobile</Link>
                 <Link to="/houses" className="text-blue-600 hover:underline mb-2">House</Link>
                 <Link to="/scooters" className="text-blue-600 hover:underline mb-2">Scooters</Link>
+                <Link to="/showcart" className="text-blue-600 hover:underline mb-2">Showcart</Link>
+
             </div>
         </nav>
     );
