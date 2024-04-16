@@ -81,7 +81,7 @@ const Productup = () => {
             <option value="">Select Category</option>
             <option value="cars">Cars</option>
             <option value="motorcycle">Motorcycle</option>
-            <option value="mobilephone">Mobile Phone</option>
+            <option value="mobile">Mobile </option>
             <option value="house">House</option>
             <option value="scooters">Scooters</option>
           </select>

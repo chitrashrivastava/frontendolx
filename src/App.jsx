@@ -12,9 +12,8 @@ import Productup from './component/prodctup'; // Sahi path ke saath import state
 import Cars from './component/Cars';
 import Motorcycle from './component/Motorcycle';
 import Scooters from './component/Scooters';
-
-
-
+import Mobile from './component/Mobile';
+import House from './component/House';
 function App() {
   
   return (
@@ -30,7 +29,12 @@ function App() {
       <Route path='/cars' element={<Cars/>}/>
       <Route path='/motorcycle' element={<Motorcycle/>}/>
       <Route path='/scooters' element={<Scooters/>}/>
+      <Route path='/mobile' element={<Mobile/>}/>
+      <Route path='/houses' element={<House/>}/>
 
+
+      
+    
     </Routes>
     </>
   );

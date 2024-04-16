@@ -58,7 +58,7 @@ const Nav1 = () => {
             <div className="flex gap-[10px] items-center justify-evenly ">
                 <Link to="/cars" className="text-blue-600 hover:underline mb-2">Cars</Link>
                 <Link to="/motorcycle" className="text-blue-600 hover:underline mb-2">Motorcycle</Link>
-                <Link to="/mobile" className="text-blue-600 hover:underline mb-2">Mobile Phone</Link>
+                <Link to="/mobile" className="text-blue-600 hover:underline mb-2">Mobile</Link>
                 <Link to="/houses" className="text-blue-600 hover:underline mb-2">House</Link>
                 <Link to="/scooters" className="text-blue-600 hover:underline mb-2">Scooters</Link>
             </div>

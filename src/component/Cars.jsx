@@ -14,7 +14,10 @@ const Cars = () => {
   if (!Array.isArray(Product)) {
     return <div>Loading...</div>; // Or any other loading indicator
   }
-
+   // Define cardfunc to add the selected product to the cart
+   const cardfunc = (product) => {
+    dispatch(addToCart(product)); // Dispatch action to add product to cart
+  }
   return (
     <div className="container mx-auto mt-8">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -27,13 +30,14 @@ const Cars = () => {
               <p className="text-gray-700">{data.description}</p>
             </div>
             <div className="p-4 bg-gray-100">
-              <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline">
+            <button onClick={() => cardfunc(data)} className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline">
                 Add to Cart
               </button>
             </div>
           </div>
         ))}
       </div>
+
     </div>
   );
 }
