@@ -1,7 +1,8 @@
-import { removeUser, saveProduct, saveUser } from "../reducers/userSlice";
+import { removeUser, saveProduct, saveUser ,infodata} from "../reducers/userSlice";
 import axios from "../../config/axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify'
+
 
 export const asyncCurrentUser = (token) => async (dispatch, getState) => {
     try {
@@ -174,8 +175,9 @@ export const Cartfetch = (userid) => async (dispatch, getState) => {
     try {
         console.log(userid)
         const dab = await axios.get(`/fetchcart/${userid}`)
+        dispatch(infodata(dab.data))
         console.log(dab)
-
+    
 
     } catch (error) {
         console.log(error)

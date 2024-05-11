@@ -23,7 +23,6 @@ const Cars = () => {
    const cardfunc = (productid) => {
     dispatch(addToCart({productid,user:user._id})); // Dispatch action to add product to cart
 
-
   }
   return (
     <div className="container mx-auto mt-8">
